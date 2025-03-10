@@ -1,9 +1,21 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CarouselIndicators } from "@/components/ui/carousel-indicators";
 
-const Balloon = ({ color, size, delay, duration, left }) => {
+const Balloon = ({
+  color,
+  size,
+  delay,
+  duration,
+  left,
+}: {
+  color: string;
+  size: number;
+  delay: number;
+  duration: number;
+  left: number;
+}) => {
   return (
     <div
       className="absolute animate-float-balloon"
@@ -33,15 +45,15 @@ const Balloon = ({ color, size, delay, duration, left }) => {
 
 export function HeroSection() {
   const balloons = [
-    { color: "#FF9AA2", size: 40, delay: 0, duration: 15, left: 10 },
-    { color: "#FFDAC1", size: 30, delay: 2, duration: 18, left: 20 },
-    { color: "#B5EAD7", size: 50, delay: 4, duration: 20, left: 30 },
-    { color: "#C7CEEA", size: 35, delay: 1, duration: 17, left: 40 },
-    { color: "#FFD166", size: 45, delay: 3, duration: 19, left: 50 },
+    { color: "#FF9AA2", size: 40, delay: 0, duration: 10, left: 10 },
+    { color: "#FFDAC1", size: 30, delay: 0, duration: 15, left: 20 },
+    { color: "#B5EAD7", size: 50, delay: 4, duration: 17, left: 30 },
+    { color: "#C7CEEA", size: 35, delay: 1, duration: 14, left: 40 },
+    { color: "#FFD166", size: 45, delay: 3, duration: 12, left: 50 },
     { color: "#FF9AA2", size: 25, delay: 5, duration: 16, left: 60 },
     { color: "#B5EAD7", size: 55, delay: 0, duration: 21, left: 70 },
     { color: "#FFDAC1", size: 35, delay: 2, duration: 18, left: 80 },
-    { color: "#C7CEEA", size: 40, delay: 4, duration: 22, left: 90 },
+    { color: "#C7CEEA", size: 40, delay: 0, duration: 22, left: 90 },
   ];
 
   return (
@@ -87,25 +99,5 @@ export function HeroSection() {
         </div>
       </div>
     </div>
-  );
-}
-
-function Search(props) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <circle cx="11" cy="11" r="8"></circle>
-      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </svg>
   );
 }

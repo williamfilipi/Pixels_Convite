@@ -24,7 +24,7 @@ export function CarouselIndicators({
           onClick={() => onSelect(index)}
           className={cn(
             "w-3 h-3 rounded-full transition-all",
-            currentSlide === index ? "bg-primary" : "bg-muted",
+            currentSlide === index ? "bg-[#FF9AA2]" : "bg-[#C7CEEA]",
           )}
           aria-label={`Go to slide ${index + 1}`}
         />

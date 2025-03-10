@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Menu, Search, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/context/cart-context";
 
 export function Navbar() {
+  const { cartCount } = useCart();
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-[#C7CEEA]">
       <div className="container flex h-16 items-center justify-between">
@@ -40,7 +42,7 @@ export function Navbar() {
               <ShoppingBag className="h-5 w-5 text-[#67B99A]" />
               <span className="sr-only">Carrinho</span>
               <span className="absolute -top-1 -right-1 bg-[#FF9AA2] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                0
+                {cartCount}
               </span>
             </Button>
           </Link>

@@ -5,6 +5,8 @@ import routes from "tempo-routes";
 import { Layout } from "./components/layout";
 
 const ProductDetailPage = lazy(() => import("./routes/product-detail"));
+const CartConfirmationPage = lazy(() => import("./routes/cart-confirmation"));
+const CartPage = lazy(() => import("./routes/cart"));
 
 function App() {
   return (
@@ -19,6 +21,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/produto/:id" element={<ProductDetailPage />} />
+          <Route
+            path="/carrinho/confirmacao"
+            element={<CartConfirmationPage />}
+          />
+          <Route path="/carrinho" element={<CartPage />} />
         </Routes>
         {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
       </Layout>
